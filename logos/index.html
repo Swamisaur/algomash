@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Algomash Identity — Round 08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Newsreader:opsz,wght@6..72,300..500&display=swap">
+<style>
+:root{--paper:#FFFFFF;--ink:#0A0A0A;--ink-2:#474747;--ink-3:#8C8C8C;--rule:#E6E6E6;--tile:#F5F5F4;--gut:clamp(16px,4vw,64px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+svg{display:block}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:var(--gut)}
+.lbl{font-size:12px;letter-spacing:.02em;color:var(--ink-3)}
+.mast{display:flex;justify-content:space-between;padding-block:22px;border-bottom:1px solid var(--rule)}
+.hero{min-height:min(74vh,720px);display:grid;place-items:center;padding-block:64px}
+.lockup{display:flex;align-items:center;gap:.3em;font-size:clamp(48px,8.6vw,120px);color:var(--ink)}
+.lockup .sym{width:1.02em;height:1.02em}
+.lockup .sym svg{width:100%;height:100%}
+.lockup .wm{height:1em}
+.lockup .wm svg{height:100%;width:auto}
+.story{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,96px);padding-block:clamp(72px,10vw,140px);border-top:1px solid var(--rule)}
+.story h2{font-family:'Newsreader',serif;font-weight:350;font-size:clamp(36px,4.6vw,64px);line-height:1.04;letter-spacing:-.02em}
+.story p{font-size:clamp(17px,1.4vw,20px);color:var(--ink-2);margin-bottom:18px;max-width:34em}
+.story p:first-child{color:var(--ink)}
+.parts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:28px}
+.parts div{border-top:1px solid var(--rule);padding-top:12px;font-size:14px;color:var(--ink-2)}
+.parts b{display:block;color:var(--ink);font-weight:500;font-size:15px;margin-bottom:2px}
+.sec{padding-block:clamp(64px,9vw,120px);border-top:1px solid var(--rule)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:24px;margin-bottom:28px}
+.sec-head h3{font-family:'Newsreader',serif;font-weight:350;font-size:clamp(28px,3vw,40px);letter-spacing:-.015em}
+.grid{display:grid;gap:12px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tile{position:relative;background:var(--tile);display:grid;place-items:center;aspect-ratio:1/1}
+.tile.wide{aspect-ratio:2/1}
+.tile.dark{background:var(--ink);color:#fff}
+.tile>.lbl{position:absolute;left:16px;top:14px}
+.tile.dark>.lbl{color:#8C8C8C}
+.big{width:48%}
+.big svg{width:100%;height:auto}
+.icon{width:var(--s);height:var(--s);border-radius:calc(var(--s)*.225);background:var(--ink);color:#fff;display:grid;place-items:center}
+.icon svg{width:72%;height:auto}
+.sizes{display:flex;align-items:flex-end;gap:clamp(16px,3vw,36px);flex-wrap:wrap;justify-content:center}
+.sizes figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.sizes .s svg{width:var(--h);height:var(--h)}
+.nav-demo{width:88%;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;box-shadow:0 1px 0 var(--rule);color:var(--ink)}
+.nav-demo .lockup{font-size:24px}
+.nav-demo>span{font-size:13px;color:var(--ink-2);white-space:nowrap}
+.nav-demo b{font-weight:500;font-size:13px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.alts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.alt{display:flex;flex-direction:column;gap:14px}
+.alt p{font-size:15px;color:var(--ink-2);max-width:32em}
+.alt p b{color:var(--ink);font-weight:500}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.step{display:flex;flex-direction:column;gap:12px}
+.step .img{background:var(--tile);aspect-ratio:3/2;overflow:hidden;display:grid;place-items:center}
+.step img{width:100%;height:auto}
+.step p{font-size:14px;color:var(--ink-2)}
+.step b{display:block;color:var(--ink);font-weight:500;margin-bottom:2px}
+footer{border-top:1px solid var(--rule);padding-block:22px 56px}
+@media (max-width:900px){.story,.alts{grid-template-columns:1fr}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.steps,.parts{grid-template-columns:1fr}}
+@media (max-width:560px){.g2,.g3{grid-template-columns:1fr}.tile.wide{aspect-ratio:3/2}.nav-demo>span{display:none}}
+</style>
+</head>
+<body>
+
+<header class="wrap mast"><span class="lbl">Algomash identity</span><span class="lbl">Round 08 · heart · pixel · black &amp; white</span></header>
+
+<section class="wrap hero">
+  <div class="lockup"><span class="sym" data-svg="heart-built"></span><span class="wm" data-svg="wordmark-plain"></span></div>
+</section>
+
+<section class="wrap story">
+  <h2>A heart, built from a pixel.</h2>
+  <div>
+    <p>Every classic geometric heart is a square turned on its corner with two half-circles on top. We simply let you see the square. At the heart of Algomash is a pixel: the smallest unit a camera reads.</p>
+    <p>The message lands at once: health, read digitally. The visible construction, with even hairline gaps between pixel and lobes, is what makes it feel engineered rather than decorative.</p>
+    <div class="parts">
+      <div><b>The pixel</b>A camera reading your face, one square at a time.</div>
+      <div><b>The heart</b>What that reading is for: your health.</div>
+      <div><b>The gaps</b>Exactly equal on all three seams: precision you can see.</div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="sec-head"><h3>The symbol</h3><span class="lbl">One turned square, two exact half-discs, 3-unit gaps</span></div>
+  <div class="grid g3">
+    <div class="tile"><span class="lbl">Positive</span><div class="big" data-svg="heart-built"></div></div>
+    <div class="tile dark"><span class="lbl">Reversed</span><div class="big" data-svg="heart-built"></div></div>
+    <div class="tile"><span class="lbl">App icon</span><span class="icon" style="--s:48%" data-svg="heart-built-small"></span></div>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="sec-head"><h3>At real sizes</h3><span class="lbl">Wider gaps below 32px so the seams survive</span></div>
+  <div class="grid g2">
+    <div class="tile wide"><span class="lbl">Symbol · 16 to 96px</span>
+      <div class="sizes">
+        <figure><span class="s" style="--h:16px" data-svg="heart-built-small"></span><span class="lbl">16</span></figure>
+        <figure><span class="s" style="--h:24px" data-svg="heart-built-small"></span><span class="lbl">24</span></figure>
+        <figure><span class="s" style="--h:32px" data-svg="heart-built"></span><span class="lbl">32</span></figure>
+        <figure><span class="s" style="--h:48px" data-svg="heart-built"></span><span class="lbl">48</span></figure>
+        <figure><span class="s" style="--h:96px" data-svg="heart-built"></span><span class="lbl">96</span></figure>
+      </div>
+    </div>
+    <div class="tile wide"><span class="lbl">App icons · 29 to 120px</span>
+      <div class="sizes">
+        <figure><span class="icon" style="--s:29px" data-svg="heart-built-small"></span><span class="lbl">29</span></figure>
+        <figure><span class="icon" style="--s:40px" data-svg="heart-built-small"></span><span class="lbl">40</span></figure>
+        <figure><span class="icon" style="--s:60px" data-svg="heart-built"></span><span class="lbl">60</span></figure>
+        <figure><span class="icon" style="--s:120px" data-svg="heart-built"></span><span class="lbl">120</span></figure>
+      </div>
+    </div>
+    <div class="tile wide"><span class="lbl">In a navigation bar</span>
+      <div class="nav-demo"><span class="lockup"><span class="sym" data-svg="heart-built-small"></span><span class="wm" data-svg="wordmark-plain"></span></span><span>Science · Company</span><b>Scan</b></div>
+    </div>
+    <div class="tile wide dark"><span class="lbl">Reversed lockup</span>
+      <div class="lockup" style="font-size:clamp(32px,4.4vw,56px);color:#fff"><span class="sym" data-svg="heart-built"></span><span class="wm" data-svg="wordmark-plain"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="sec-head"><h3>Alternatives from the same set</h3><span class="lbl">Same rules, other combinations</span></div>
+  <div class="alts">
+    <div class="alt"><div class="tile wide"><span class="lbl">Heart + one pixel</span><div class="lockup" style="font-size:clamp(32px,4.2vw,56px)"><span class="sym" data-svg="heart-pixel"></span><span class="wm" data-svg="wordmark-plain"></span></div></div>
+      <p><b>Simplest.</b> A solid heart with a single white pixel: a digital heart. Very clear, less distinctive.</p></div>
+    <div class="alt"><div class="tile wide"><span class="lbl">Eye + pixel pupil</span><div class="lockup" style="font-size:clamp(32px,4.2vw,56px)"><span class="sym" style="width:1.4em" data-svg="eye-pixel"></span><span class="wm" data-svg="wordmark-plain"></span></div></div>
+      <p><b>Most distinctive.</b> A calm eye whose pupil is a pixel: half human, half camera. Risk: eyes can feel watchful.</p></div>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <div class="sec-head"><h3>How we got here</h3><span class="lbl">Exact geometry, rendered and reviewed</span></div>
+  <div class="steps">
+    <div class="step"><div class="img"><img src="craft/px1/_sheet.png" alt=""></div><p><b>11 combinations</b>Heart-from-a-pixel, heart+pixel and pixel-eye survived. Plus-sign heart (generic), three-pixel "tick", drop+square ("house") killed.</p></div>
+    <div class="step"><div class="img"><img src="craft/px2/_sheet.png" alt=""></div><p><b>Proportions</b>Gap widths, pixel size, pupil size. The joined lobes left slivers at the dip.</p></div>
+    <div class="step"><div class="img"><img src="craft/px3/dip.png" alt=""></div><p><b>Exact construction</b>Half-discs pushed out along their normals: equal gaps, no slivers.</p></div>
+  </div>
+</section>
+
+<footer class="wrap"><span class="lbl">Working document · symbols are exact boolean geometry; wordmark set in Inter</span></footer>
+
+<script>
+(async () => {
+  const names = [...new Set([...document.querySelectorAll('[data-svg]')].map(e => e.dataset.svg))];
+  const svgs = {};
+  await Promise.all(names.map(async n => { svgs[n] = (await (await fetch(`assets/${n}.svg`)).text()).replace('<svg ', '<svg aria-hidden="true" '); }));
+  document.querySelectorAll('[data-svg]').forEach(e => e.innerHTML = svgs[e.dataset.svg]);
+})();
+</script>
+</body>
+</html>
